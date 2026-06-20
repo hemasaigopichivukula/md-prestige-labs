@@ -830,3 +830,32 @@
       width: 190px;
     }
   }
+  /* Header logo size fix */
+
+.header-inner {
+    min-height: 76px;
+  }
+  
+  .brand img {
+    max-height: 48px;
+    width: auto;
+    object-fit: contain;
+  }
+  
+  .site-header {
+    min-height: 76px;
+  }
+  
+  @media (max-width: 768px) {
+    .brand img {
+      max-height: 38px;
+    }
+  
+    .header-inner {
+      min-height: 68px;
+    }
+  
+    .site-header {
+      min-height: 68px;
+    }
+  }
