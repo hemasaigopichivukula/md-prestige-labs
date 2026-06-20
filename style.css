@@ -12,7 +12,6 @@
     --shadow-sm: 0 8px 24px rgba(0, 0, 0, 0.05);
     --shadow-md: 0 18px 48px rgba(0, 0, 0, 0.08);
     --shadow-lg: 0 28px 80px rgba(0, 0, 0, 0.1);
-    --radius-sm: 16px;
     --radius-md: 24px;
     --radius-lg: 34px;
     --container: min(1180px, 92vw);
@@ -24,7 +23,7 @@
   
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 90px;
+    scroll-padding-top: 92px;
   }
   
   body {
@@ -34,10 +33,6 @@
     background: var(--white);
     line-height: 1.65;
     -webkit-font-smoothing: antialiased;
-  }
-  
-  body.nav-open {
-    overflow: hidden;
   }
   
   img {
@@ -51,16 +46,12 @@
   
   h1,
   h2,
-  h3,
-  .brand,
-  .footer-brand {
+  h3 {
     font-family: "Cormorant Garamond", Georgia, serif;
     color: var(--black);
+    margin-top: 0;
   }
   
-  h1,
-  h2,
-  h3,
   p {
     margin-top: 0;
   }
@@ -76,13 +67,13 @@
     position: sticky;
     top: 0;
     z-index: 1000;
-    background: rgba(255, 255, 255, 0.92);
+    background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(16px);
     border-bottom: 1px solid rgba(184, 146, 75, 0.18);
   }
   
   .header-inner {
-    min-height: 78px;
+    min-height: 88px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -90,30 +81,37 @@
   }
   
   .brand {
+    width: 300px;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    overflow: visible;
     text-decoration: none;
-    font-size: 19px;
-    font-weight: 700;
-    letter-spacing: 2.6px;
-    text-transform: uppercase;
-    white-space: nowrap;
+    flex-shrink: 0;
   }
   
-  .brand span {
-    color: var(--gold);
+  .brand img {
+    width: 300px;
+    height: auto;
+    max-width: none;
+    object-fit: contain;
+    transform: scale(1.55);
+    transform-origin: left center;
   }
   
   .site-nav {
     display: flex;
     align-items: center;
     gap: 21px;
+    margin-left: auto;
   }
   
   .site-nav a {
     text-decoration: none;
     color: var(--black);
     font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 0.25px;
+    font-weight: 700;
+    letter-spacing: 0.2px;
     transition: color 0.25s ease;
   }
   
@@ -124,8 +122,8 @@
   .nav-cta {
     border: 1px solid var(--gold);
     border-radius: 999px;
-    padding: 10px 18px;
-    background: rgba(255, 255, 255, 0.55);
+    padding: 12px 22px;
+    background: rgba(255, 255, 255, 0.65);
   }
   
   .nav-cta:hover {
@@ -147,19 +145,19 @@
   /* Shared Sections */
   
   .section {
-    padding: clamp(76px, 9vw, 118px) 0;
+    padding: 58px 0;
     border-top: 1px solid var(--border);
   }
   
   .soft {
     background:
-      radial-gradient(circle at top left, rgba(184, 146, 75, 0.09), transparent 34%),
+      radial-gradient(circle at top left, rgba(184, 146, 75, 0.08), transparent 34%),
       var(--beige);
   }
   
   .section-title {
     max-width: 780px;
-    margin-bottom: 48px;
+    margin-bottom: 30px;
   }
   
   .section-title.centered {
@@ -196,13 +194,13 @@
   
   .hero {
     position: relative;
-    min-height: calc(100vh - 78px);
+    min-height: auto;
     display: flex;
     align-items: center;
-    padding: clamp(76px, 9vw, 118px) 0;
+    padding: 72px 0;
     overflow: hidden;
     background:
-      radial-gradient(circle at 82% 18%, rgba(184, 146, 75, 0.22), transparent 30%),
+      radial-gradient(circle at 82% 18%, rgba(184, 146, 75, 0.2), transparent 30%),
       linear-gradient(135deg, #ffffff 0%, #faf7f1 100%);
   }
   
@@ -221,6 +219,12 @@
     grid-template-columns: 1.08fr 0.92fr;
     gap: clamp(42px, 6vw, 76px);
     align-items: center;
+  }
+  
+  .hero-logo {
+    width: min(380px, 82vw);
+    height: auto;
+    margin-bottom: 28px;
   }
   
   .hero h1 {
@@ -256,7 +260,7 @@
     cursor: pointer;
     font-weight: 800;
     font-size: 14px;
-    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+    transition: 0.25s ease;
   }
   
   .btn:hover {
@@ -281,7 +285,7 @@
   
   .hero-card {
     position: relative;
-    background: rgba(255, 255, 255, 0.88);
+    background: rgba(255, 255, 255, 0.9);
     border: 1px solid rgba(184, 146, 75, 0.22);
     border-radius: var(--radius-lg);
     padding: clamp(30px, 4vw, 42px);
@@ -331,12 +335,14 @@
     top: 15px;
     color: var(--gold);
     font-weight: 900;
-  }/* Grids and Cards */
-
-.grid {
+  }
+  
+  /* Grids and Cards */
+  
+  .grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
+    gap: 20px;
   }
   
   .grid-4 {
@@ -348,9 +354,9 @@
     background: rgba(255, 255, 255, 0.92);
     border: 1px solid var(--border);
     border-radius: var(--radius-md);
-    padding: 30px;
+    padding: 24px;
     box-shadow: var(--shadow-sm);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    transition: 0.3s ease;
   }
   
   .card:hover,
@@ -374,16 +380,13 @@
   }
   
   .mini-card {
-    min-height: 120px;
+    min-height: 110px;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     font-weight: 800;
     font-size: 16px;
-    color: var(--black);
-    background:
-      linear-gradient(135deg, rgba(255,255,255,0.96), rgba(250,247,241,0.96));
   }
   
   /* Process */
@@ -391,16 +394,16 @@
   .steps {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 22px;
+    gap: 20px;
   }
   
   .step {
     background: var(--white);
     border: 1px solid var(--border);
     border-radius: var(--radius-md);
-    padding: 28px;
+    padding: 24px;
     box-shadow: var(--shadow-sm);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: 0.3s ease;
   }
   
   .step:hover {
@@ -435,7 +438,7 @@
   /* Gallery */
   
   .gallery-box {
-    min-height: 230px;
+    min-height: 210px;
     border: 1px dashed var(--gold);
     border-radius: var(--radius-md);
     display: grid;
@@ -548,7 +551,6 @@
     font-family: "Inter", system-ui, sans-serif;
     font-size: 14px;
     outline: none;
-    transition: border-color 0.25s ease, box-shadow 0.25s ease;
   }
   
   input:focus,
@@ -574,6 +576,7 @@
       radial-gradient(circle at top left, rgba(184, 146, 75, 0.16), transparent 32%),
       var(--charcoal);
     color: var(--white);
+    padding-bottom: 48px;
   }
   
   .contact-section h2,
@@ -623,7 +626,7 @@
   .site-footer {
     background: #050505;
     color: rgba(255, 255, 255, 0.58);
-    padding: 30px 0;
+    padding: 34px 0;
     font-size: 13px;
   }
   
@@ -636,18 +639,21 @@
   }
   
   .footer-brand {
-    color: rgba(255, 255, 255, 0.92);
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 17px;
-    font-weight: 700;
+    display: flex;
+    align-items: center;
+  }
+  
+  .footer-logo {
+    width: 300px;
+    max-width: none;
+    height: auto;
   }
   
   /* Responsive */
   
   @media (max-width: 1080px) {
     .site-nav {
-      gap: 15px;
+      gap: 14px;
     }
   
     .site-nav a {
@@ -677,7 +683,7 @@
   
     .site-nav {
       position: absolute;
-      top: 78px;
+      top: 88px;
       left: 4vw;
       right: 4vw;
       display: none;
@@ -701,25 +707,12 @@
       font-size: 14px;
     }
   
-    .site-nav a:last-child {
-      border-bottom: 0;
-    }
-  
     .nav-cta {
       text-align: center;
       margin-top: 8px;
       background: var(--black);
       color: var(--white) !important;
       border-color: var(--black);
-    }
-  
-    .hero {
-      min-height: auto;
-    }
-  
-    .hero::before {
-      inset: 16px;
-      border-radius: 28px;
     }
   
     .hero-grid {
@@ -733,28 +726,37 @@
   
   @media (max-width: 640px) {
     html {
-      scroll-padding-top: 76px;
+      scroll-padding-top: 78px;
     }
   
     .header-inner {
-      min-height: 72px;
+      min-height: 76px;
     }
   
     .brand {
-      font-size: 15px;
-      letter-spacing: 1.8px;
+      width: 190px;
+      height: 58px;
+    }
+  
+    .brand img {
+      width: 190px;
+      transform: scale(1.35);
     }
   
     .section {
-      padding: 68px 0;
+      padding: 46px 0;
     }
   
     .hero {
-      padding: 64px 0;
+      padding: 56px 0;
     }
   
     .hero h1 {
       font-size: clamp(40px, 13vw, 56px);
+    }
+  
+    .hero-logo {
+      width: min(280px, 84vw);
     }
   
     .hero-lead,
@@ -779,362 +781,12 @@
       grid-template-columns: 1fr;
     }
   
-    .card,
-    .mini-card,
-    .step,
-    form,
-    .hero-card {
-      padding: 24px;
-    }
-  
     .footer-inner {
       flex-direction: column;
       text-align: center;
     }
-  }
-  /* Logo Assets */
-
-.brand {
-    display: inline-flex;
-    align-items: center;
-  }
-  
-  .brand img {
-    height: 54px;
-    width: auto;
-    display: block;
-  }
-  
-  .hero-logo {
-    width: min(340px, 82vw);
-    height: auto;
-    margin-bottom: 28px;
-  }
-  
-  .footer-logo {
-    width: 220px;
-    height: auto;
-    display: block;
-  }
-  
-  @media (max-width: 768px) {
-    .brand img {
-      height: 42px;
-    }
-  
-    .hero-logo {
-      width: min(280px, 84vw);
-    }
-  
-    .footer-logo {
-      width: 190px;
-    }
-  }
-  /* Header logo size fix */
-
-.header-inner {
-    min-height: 76px;
-  }
-  
-  .brand img {
-    max-height: 48px;
-    width: auto;
-    object-fit: contain;
-  }
-  
-  .site-header {
-    min-height: 76px;
-  }
-  
-  @media (max-width: 768px) {
-    .brand img {
-      max-height: 38px;
-    }
-  
-    .header-inner {
-      min-height: 68px;
-    }
-  
-    .site-header {
-      min-height: 68px;
-    }
-  }
-  /* Final logo placement fixes */
-
-.brand img {
-    height: 82px;
-    width: auto;
-    max-width: 260px;
-    object-fit: contain;
-    transform: scale(1.45);
-    transform-origin: left center;
-  }
-  
-  .hero-logo {
-    width: min(420px, 82vw);
-    margin-bottom: 34px;
-  }
-  
-  .footer-logo {
-    width: 260px;
-    height: auto;
-    display: block;
-  }
-  
-  @media (max-width: 768px) {
-    .brand img {
-      height: 58px;
-      max-width: 190px;
-      transform: scale(1.25);
-    }
-  
-    .hero-logo {
-      width: min(300px, 86vw);
-    }
-  
-    .footer-logo {
-      width: 210px;
-    }
-  }
-  /* Strong logo sizing fix */
-
-.header-inner {
-    min-height: 96px;
-  }
-  
-  .brand {
-    width: 260px;
-    height: 76px;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-  }
-  
-  .brand img {
-    width: 260px;
-    max-width: none;
-    height: auto;
-    transform: scale(2.35);
-    transform-origin: left center;
-  }
-  
-  .site-nav {
-    margin-left: auto;
-  }
-  
-  @media (max-width: 768px) {
-    .header-inner {
-      min-height: 78px;
-    }
-  
-    .brand {
-      width: 190px;
-      height: 58px;
-    }
-  
-    .brand img {
-      width: 190px;
-      transform: scale(2.1);
-    }
-  }
-  /* Footer spacing fix */
-
-.contact-section {
-    padding-bottom: 72px;
-  }
-  
-  .site-footer {
-    padding: 42px 0;
-  }
-  
-  .footer-inner {
-    align-items: center;
-  }
-  
-  .footer-logo {
-    width: 280px;
-    max-width: 280px;
-  }
-  
-  @media (max-width: 768px) {
-    .contact-section {
-      padding-bottom: 48px;
-    }
   
     .footer-logo {
       width: 220px;
-    }
-  }
-  /* Final compact spacing + logo override */
-
-.section {
-    padding: 64px 0 !important;
-  }
-  
-  .hero {
-    padding: 72px 0 !important;
-    min-height: auto !important;
-  }
-  
-  .section-title {
-    margin-bottom: 34px !important;
-  }
-  
-  .grid,
-  .steps {
-    gap: 20px !important;
-  }
-  
-  .card,
-  .step,
-  .mini-card {
-    padding: 24px !important;
-  }
-  
-  .header-inner {
-    min-height: 82px !important;
-  }
-  
-  .brand {
-    width: 300px !important;
-    height: 72px !important;
-    overflow: hidden !important;
-  }
-  
-  .brand img {
-    width: 300px !important;
-    max-width: none !important;
-    height: auto !important;
-    transform: scale(2.8) !important;
-    transform-origin: left center !important;
-  }
-  
-  .footer-logo {
-    width: 320px !important;
-    max-width: none !important;
-  }
-  
-  .contact-section {
-    padding-bottom: 50px !important;
-  }
-  
-  .site-footer {
-    padding: 32px 0 !important;
-  }
-  
-  @media (max-width: 768px) {
-    .section {
-      padding: 48px 0 !important;
-    }
-  
-    .brand {
-      width: 210px !important;
-      height: 58px !important;
-    }
-  
-    .brand img {
-      width: 210px !important;
-      transform: scale(2.4) !important;
-    }
-  }
-  /* FINAL WEBSITE POLISH OVERRIDES */
-
-.section {
-    padding: 58px 0 !important;
-  }
-  
-  .hero {
-    padding: 72px 0 !important;
-    min-height: auto !important;
-  }
-  
-  .section-title {
-    margin-bottom: 30px !important;
-  }
-  
-  .grid,
-  .steps {
-    gap: 20px !important;
-  }
-  
-  .card,
-  .step,
-  .mini-card {
-    padding: 24px !important;
-  }
-  
-  /* Header logo fix */
-  .header-inner {
-    min-height: 84px !important;
-  }
-  
-  .brand {
-    width: 310px !important;
-    height: 76px !important;
-    overflow: hidden !important;
-    display: flex !important;
-    align-items: center !important;
-  }
-  
-  .brand img {
-    width: 310px !important;
-    max-width: none !important;
-    height: auto !important;
-    transform: scale(2.7) !important;
-    transform-origin: left center !important;
-  }
-  
-  /* Hero logo */
-  .hero-logo {
-    width: min(380px, 82vw) !important;
-    height: auto !important;
-    margin-bottom: 28px !important;
-  }
-  
-  /* Footer logo */
-  .footer-logo {
-    width: 300px !important;
-    max-width: none !important;
-    height: auto !important;
-  }
-  
-  .contact-section {
-    padding-bottom: 48px !important;
-  }
-  
-  .site-footer {
-    padding: 34px 0 !important;
-  }
-  
-  .footer-inner {
-    align-items: center !important;
-  }
-  
-  /* Mobile */
-  @media (max-width: 768px) {
-    .section {
-      padding: 46px 0 !important;
-    }
-  
-    .hero {
-      padding: 56px 0 !important;
-    }
-  
-    .brand {
-      width: 210px !important;
-      height: 58px !important;
-    }
-  
-    .brand img {
-      width: 210px !important;
-      transform: scale(2.35) !important;
-    }
-  
-    .hero-logo {
-      width: min(280px, 84vw) !important;
-    }
-  
-    .footer-logo {
-      width: 220px !important;
     }
   }
