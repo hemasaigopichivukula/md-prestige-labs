@@ -792,3 +792,41 @@
       text-align: center;
     }
   }
+  /* Logo Assets */
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+  }
+  
+  .brand img {
+    height: 54px;
+    width: auto;
+    display: block;
+  }
+  
+  .hero-logo {
+    width: min(340px, 82vw);
+    height: auto;
+    margin-bottom: 28px;
+  }
+  
+  .footer-logo {
+    width: 220px;
+    height: auto;
+    display: block;
+  }
+  
+  @media (max-width: 768px) {
+    .brand img {
+      height: 42px;
+    }
+  
+    .hero-logo {
+      width: min(280px, 84vw);
+    }
+  
+    .footer-logo {
+      width: 190px;
+    }
+  }
