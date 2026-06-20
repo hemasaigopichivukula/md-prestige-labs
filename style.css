@@ -896,3 +896,72 @@
       width: 210px;
     }
   }
+  /* Strong logo sizing fix */
+
+.header-inner {
+    min-height: 96px;
+  }
+  
+  .brand {
+    width: 260px;
+    height: 76px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+  }
+  
+  .brand img {
+    width: 260px;
+    max-width: none;
+    height: auto;
+    transform: scale(2.35);
+    transform-origin: left center;
+  }
+  
+  .site-nav {
+    margin-left: auto;
+  }
+  
+  @media (max-width: 768px) {
+    .header-inner {
+      min-height: 78px;
+    }
+  
+    .brand {
+      width: 190px;
+      height: 58px;
+    }
+  
+    .brand img {
+      width: 190px;
+      transform: scale(2.1);
+    }
+  }
+  /* Footer spacing fix */
+
+.contact-section {
+    padding-bottom: 72px;
+  }
+  
+  .site-footer {
+    padding: 42px 0;
+  }
+  
+  .footer-inner {
+    align-items: center;
+  }
+  
+  .footer-logo {
+    width: 280px;
+    max-width: 280px;
+  }
+  
+  @media (max-width: 768px) {
+    .contact-section {
+      padding-bottom: 48px;
+    }
+  
+    .footer-logo {
+      width: 220px;
+    }
+  }
