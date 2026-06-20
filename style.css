@@ -859,3 +859,40 @@
       min-height: 68px;
     }
   }
+  /* Final logo placement fixes */
+
+.brand img {
+    height: 82px;
+    width: auto;
+    max-width: 260px;
+    object-fit: contain;
+    transform: scale(1.45);
+    transform-origin: left center;
+  }
+  
+  .hero-logo {
+    width: min(420px, 82vw);
+    margin-bottom: 34px;
+  }
+  
+  .footer-logo {
+    width: 260px;
+    height: auto;
+    display: block;
+  }
+  
+  @media (max-width: 768px) {
+    .brand img {
+      height: 58px;
+      max-width: 190px;
+      transform: scale(1.25);
+    }
+  
+    .hero-logo {
+      width: min(300px, 86vw);
+    }
+  
+    .footer-logo {
+      width: 210px;
+    }
+  }
