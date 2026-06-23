@@ -942,3 +942,19 @@
       grid-template-columns: 1fr;
     }
   }
+  /* FINAL HEADER LOGO OVERRIDE */
+.brand {
+  width: 360px !important;
+  height: 90px !important;
+  overflow: visible !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.brand img {
+  width: 330px !important;
+  height: auto !important;
+  max-width: none !important;
+  object-fit: contain !important;
+  transform: none !important;
+}
