@@ -81,22 +81,19 @@
   }
   
   .brand {
-    width: 300px;
-    height: 72px;
-    display: flex;
-    align-items: center;
-    overflow: visible;
-    text-decoration: none;
-    flex-shrink: 0;
+    width: 320px !important;
+    height: 86px !important;
+    overflow: visible !important;
+    display: flex !important;
+    align-items: center !important;
   }
   
   .brand img {
-    width: 300px;
-    height: auto;
-    max-width: none;
-    object-fit: contain;
-    transform: scale(1.55);
-    transform-origin: left center;
+    width: 300px !important;
+    height: auto !important;
+    max-width: none !important;
+    object-fit: contain !important;
+    transform: none !important;
   }
   
   .site-nav {
