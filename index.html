@@ -290,30 +290,45 @@
           </p>
         </div>
 
-        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <form id="quoteForm" action="https://formsubmit.co/info@mdprestigelabs.com" method="POST">
+
+          <!-- FormSubmit Configuration -->
+          <input type="hidden" name="_subject" value="New Quote Request - MD Prestige Labs">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
+        
+          <!-- Change this to your website -->
+          <input type="hidden" name="_next" value="https://mdprestigelabs.com/thank-you.html">
+        
           <div class="form-grid">
+        
             <input type="text" name="Name" placeholder="Name" required />
             <input type="text" name="Company" placeholder="Company" />
             <input type="email" name="Email" placeholder="Email" required />
             <input type="tel" name="Phone" placeholder="Phone" />
             <input type="text" name="Product Type" placeholder="Product Type" />
             <input type="text" name="Estimated Quantity" placeholder="Estimated Quantity" />
-
+        
             <select name="Packaging Needed">
               <option value="">Packaging Needed?</option>
               <option>Yes</option>
               <option>No</option>
               <option>Not sure</option>
             </select>
-
+        
             <input type="text" name="Timeline" placeholder="Timeline" />
-            <textarea class="full" name="Message" placeholder="Tell us about your product idea"></textarea>
-
-            <button class="btn btn-primary full" type="submit">Submit Inquiry</button>
+        
+            <textarea
+              class="full"
+              name="Message"
+              placeholder="Tell us about your product idea"></textarea>
+        
+            <button class="btn btn-primary full" type="submit">
+              Submit Inquiry
+            </button>
+        
           </div>
         </form>
-      </div>
-    </section>
 
     <section id="contact" class="section contact-section">
       <div class="container">
