@@ -143,13 +143,29 @@
           <p>Explore ingredient directions for sophisticated, contemporary product concepts.</p>
         </div>
         <div class="ingredient-track">
-          <article class="ingredient-card reveal"><img src="images/ingredients/pdrn.png" alt="PDRN ingredient concept" loading="lazy"><div><span>01</span><h3>PDRN</h3></div></article>
-          <article class="ingredient-card reveal"><img src="images/ingredients/tranexamic-acid.png" alt="Tranexamic acid ingredient concept" loading="lazy"><div><span>02</span><h3>Tranexamic Acid</h3></div></article>
-          <article class="ingredient-card reveal"><img src="images/ingredients/kojic-dipalmitate.png" alt="Kojic dipalmitate ingredient concept" loading="lazy"><div><span>03</span><h3>Kojic Dipalmitate</h3></div></article>
-          <article class="ingredient-card reveal"><img src="images/ingredients/bifida-ferment-lysate.png" alt="Bifida ferment lysate ingredient concept" loading="lazy"><div><span>04</span><h3>Bifida Ferment</h3></div></article>
+          <button class="ingredient-card reveal" type="button" data-full-image="images/ingredients/pdrn.png" data-image-title="PDRN" aria-label="View and enlarge the full PDRN flyer"><img src="images/ingredients/pdrn.png" alt="PDRN ingredient flyer" loading="lazy"><div><span>01</span><h3>PDRN</h3><small>View full flyer ↗</small></div></button>
+          <button class="ingredient-card reveal" type="button" data-full-image="images/ingredients/tranexamic-acid.png" data-image-title="Tranexamic Acid" aria-label="View and enlarge the full Tranexamic Acid flyer"><img src="images/ingredients/tranexamic-acid.png" alt="Tranexamic Acid ingredient flyer" loading="lazy"><div><span>02</span><h3>Tranexamic Acid</h3><small>View full flyer ↗</small></div></button>
+          <button class="ingredient-card reveal" type="button" data-full-image="images/ingredients/kojic-dipalmitate.png" data-image-title="Kojic Dipalmitate" aria-label="View and enlarge the full Kojic Dipalmitate flyer"><img src="images/ingredients/kojic-dipalmitate.png" alt="Kojic Dipalmitate ingredient flyer" loading="lazy"><div><span>03</span><h3>Kojic Dipalmitate</h3><small>View full flyer ↗</small></div></button>
+          <button class="ingredient-card reveal" type="button" data-full-image="images/ingredients/bifida-ferment-lysate.png" data-image-title="Bifida Ferment" aria-label="View and enlarge the full Bifida Ferment flyer"><img src="images/ingredients/bifida-ferment-lysate.png" alt="Bifida Ferment ingredient flyer" loading="lazy"><div><span>04</span><h3>Bifida Ferment</h3><small>View full flyer ↗</small></div></button>
         </div>
       </div>
     </section>
+
+    <div class="image-viewer" role="dialog" aria-modal="true" aria-labelledby="viewerTitle" aria-hidden="true">
+      <div class="viewer-toolbar">
+        <p id="viewerTitle">Ingredient flyer</p>
+        <div>
+          <button type="button" class="viewer-control viewer-zoom-out" aria-label="Zoom out">−</button>
+          <button type="button" class="viewer-control viewer-reset" aria-label="Reset zoom">100%</button>
+          <button type="button" class="viewer-control viewer-zoom-in" aria-label="Zoom in">+</button>
+          <button type="button" class="viewer-control viewer-close" aria-label="Close image viewer">×</button>
+        </div>
+      </div>
+      <div class="viewer-stage">
+        <img src="" alt="">
+      </div>
+      <p class="viewer-hint">Use the controls to zoom. Scroll to move around the enlarged flyer.</p>
+    </div>
 
     <section id="process" class="section process-section">
       <div class="container process-grid">
