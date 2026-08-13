@@ -6,6 +6,27 @@ const updateHeader = () => header?.classList.toggle("scrolled", window.scrollY >
 updateHeader();
 window.addEventListener("scroll", updateHeader, { passive: true });
 
+const sectionLinks = [...document.querySelectorAll('.site-nav a[href^="#"]:not(.nav-cta)')];
+const linkedSections = sectionLinks
+  .map((link) => document.querySelector(link.getAttribute("href")))
+  .filter(Boolean);
+
+if ("IntersectionObserver" in window && linkedSections.length) {
+  const sectionObserver = new IntersectionObserver((entries) => {
+    const visible = entries
+      .filter((entry) => entry.isIntersecting)
+      .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+    if (!visible) return;
+    sectionLinks.forEach((link) => {
+      const active = link.getAttribute("href") === `#${visible.target.id}`;
+      link.classList.toggle("active", active);
+      if (active) link.setAttribute("aria-current", "location");
+      else link.removeAttribute("aria-current");
+    });
+  }, { rootMargin: "-25% 0px -60%", threshold: [0, 0.15, 0.35] });
+  linkedSections.forEach((section) => sectionObserver.observe(section));
+}
+
 if (menuToggle && nav) {
   const closeMenu = () => {
     nav.classList.remove("open");
